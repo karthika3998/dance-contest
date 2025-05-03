@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px; /* Reduced height for better proportion */
+    background-color: blanchedalmond;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: yellowgreen;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.navbar img {
+    height: 100px; /* Adjusted for better fit */
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+}
+.par, .prize, .use, .rules, .miscellaneous, .agreement {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #4CAF50;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
+    color: #1a3c5e;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.par h1::after, .prize h1::after, .use h1::after, .rules h1::after, .miscellaneous h1::after, .agreement h1::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #4CAF50;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+}
+
+.par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.prize p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prize p::before {
+    content: '🏆';
+    font-size: 1.5em;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.use::before {
+    content: '📜';
+    font-size: 2em;
+    color: #4CAF50;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.2;
+}
+
+.rules p, .miscellaneous p {
+    padding-left: 20px;
+    position: relative;
+}
+
+.rules p::before, .miscellaneous p::before {
+    content: '•';
+    color: #4CAF50;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+}
+
+.btn {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 30px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #45a049;
+    transform: translateY(-3px);
+}
+
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        height: 80px;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+        margin: 0 15px;
+    }
+
+    .par, .prize, .use, .rules, .miscellaneous, .agreement {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
+        font-size: 2em;
+    }
+
+    .par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    .par, .prize, .use, .rules, .miscellaneous, .agreement {
+        padding: 15px;
+    }
+
+    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
+        font-size: 1.8em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 0.9rem;
+    }
+
+    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
+        font-size: 1.6em;
+    }
+
+    .par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p {
+        font-size: 0.95em;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.95em;
+    }
+}
