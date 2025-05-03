@@ -1,0 +1,354 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px; /* Reduced height for better proportion */
+    background-color: blanchedalmond;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: yellowgreen;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.navbar img {
+    height: 100px; /* Adjusted for better fit */
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+/* Content section */
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8f0;
+}
+
+.text-container {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.text-container h1 {
+    font-size: 3rem;
+    font-family: "Georgia", serif;
+    font-style: italic;
+    color: #4CAF50;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    border-right: 2px solid #4CAF50;
+    margin: 0;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #4CAF50; }
+}
+
+/* Contest heading */
+.contest-heading {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    color: gold;
+    background-color: #121212;
+    font-family: "Georgia", serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Contest section */
+.Contest {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contest-text {
+    font-size: 1.2rem;
+    font-family: "Georgia", serif;
+    color: #333333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Join button */
+.view {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.view button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid gold;
+    color: gold;
+    font-family: "Georgia", serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view button:hover {
+    background-color: gold;
+    color: #121212;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Heading section */
+.heading {
+    text-align: center;
+    margin: 60px 0;
+    font-family: "Georgia", serif;
+}
+
+.heading h1 {
+    color: #4CAF50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #333;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Slideshow container */
+.team-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    font-family: "Georgia", serif;
+}
+
+.team-wrapper {
+    display: flex;
+    width: 1000%; /* 10 slides */
+    height: 400px;
+    animation: slide 30s infinite;
+}
+
+.team-member {
+    width: 10%; /* 100% / 10 slides */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    transition: opacity 0.5s ease;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #4CAF50;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+}
+
+.team-member h3 {
+    color: #4CAF50;
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.team-member p {
+    color: #333333;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #4CAF50;
+}
+
+@keyframes slide {
+    0%, 8% { transform: translateX(0); }
+    10%, 18% { transform: translateX(-10%); }
+    20%, 28% { transform: translateX(-20%); }
+    30%, 38% { transform: translateX(-30%); }
+    40%, 48% { transform: translateX(-40%); }
+    50%, 58% { transform: translateX(-50%); }
+    60%, 68% { transform: translateX(-60%); }
+    70%, 78% { transform: translateX(-70%); }
+    80%, 88% { transform: translateX(-80%); }
+    90%, 98% { transform: translateX(-90%); }
+    100% { transform: translateX(0); }
+}
+
+.team-container:hover .team-wrapper {
+    animation-play-state: paused;
+}
+
+@media (max-width: 1024px) {
+    .team-container {
+        max-width: 700px;
+    }
+
+    .team-wrapper {
+        height: 350px;
+    }
+
+    .team-member {
+        height: 350px;
+        padding: 15px;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-member h3 {
+        font-size: 1.4em;
+    }
+
+    .team-member p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        max-width: 600px;
+    }
+
+    .team-wrapper {
+        height: 300px;
+    }
+
+    .team-member {
+        height: 300px;
+        padding: 12px;
+    }
+
+    .team-member img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .team-member h3 {
+        font-size: 1.3em;
+    }
+
+    .team-member p {
+        font-size: 0.9em;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        max-width: 300px;
+        height: 400px;
+    }
+
+    .team-wrapper {
+        height: 400px;
+    }
+
+    .team-member {
+        height: 400px;
+        padding: 10px;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-member h3 {
+        font-size: 1.2em;
+    }
+
+    .team-member p {
+        font-size: 0.85em;
+    }
+
+    .dot {
+        height: 6px;
+        width: 6px;
+        margin: 0 3px;
+    }
+}

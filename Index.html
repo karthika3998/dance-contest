@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="talent.png" alt="Logo" />
+        <ul class="nav-links">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="contest.html">Contest</a></li>
+            <li><a href="about-us.html">About-Us</a></li>  
+            <li><a href="contact-us.html">Contact-Us</a></li>
+        </ul>>
+        <img src="ind.png" alt="logo">
+    </div>
+    <div class="content">
+        <div class="text-container">
+            <h1>Empowering the future talents!..</h1>
+        </div>
+    </div>
+    <div class="contest-heading">
+        <h2>NRI Talent Showcase: Uniting UAE's Indian Community</h2>
+    </div>
+    <div class="Contest">
+        <div class="contest-text">
+            <p>The NRI Talent Showcase is a dynamic platform designed to celebrate the creativity, skills, and achievements of the Indian diaspora in the UAE. Whether you're a singer or bathroom singer, this is your stage to shine.<br>
+    
+                🌟 Talent of the year – Each Year, we spotlight one exceptional individual whose story and talent inspire the community. Think you’ve got what it takes?
+                <br>
+                🔗 Join the Movement – Register now or submit your talent to be featured. Let’s build a stronger, more connected community—one story at a time.</p>
+        </div>
+    </div>
+    <div class="view">
+        <button class="button">Join Now</button>
+    </div>
+    <div class="heading" data-aos="fade-up">
+        <div class="heading">
+            <h1>Our Team</h1>
+            <p>Meet the passionate individuals who drive our mission forward with dedication, creativity, and collaboration.</p>
+        </div>
+    </div>        
+    <div class="team-container">
+        <div class="team-wrapper" id="teamWrapper">
+            <div class="team-member" data-aos="fade-up">
+                <img src="president.jpg" alt="President">
+                <h3>Lakshman</h3>
+                <p>President</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://source.unsplash.com/200x200/?portrait,person2" alt="Team Member 2">
+                <h3>Jane Smith</h3>
+                <p>Role: Event Coordinator</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://source.unsplash.com/200x200/?portrait,person3" alt="Team Member 3">
+                <h3>Michael Johnson</h3>
+                <p>Role: Marketing Specialist</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://source.unsplash.com/200x200/?portrait,person4" alt="Team Member 4">
+                <h3>Emily Davis</h3>
+                <p>Role: Community Outreach</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://source.unsplash.com/200x200/?portrait,person5" alt="Team Member 5">
+                <h3>David Wilson</h3>
+                <p>Role: Technical Support</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="500">
+                <img src="https://source.unsplash.com/200x200/?portrait,person6" alt="Team Member 6">
+                <h3>Sarah Brown</h3>
+                <p>Role: Social Media Manager</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                <img src="https://source.unsplash.com/200x200/?portrait,person7" alt="Team Member 7">
+                <h3>Chris Taylor</h3>
+                <p>Role: Sponsorship Manager</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="700">
+                <img src="https://source.unsplash.com/200x200/?portrait,person8" alt="Team Member 8">
+                <h3>Jessica Lee</h3>
+                <p>Role: Logistics Coordinator</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="800">
+                <img src="https://source.unsplash.com/200x200/?portrait,person9" alt="Team Member 9">
+                <h3>Daniel Martinez</h3>
+                <p>Role: Graphic Designer</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="900">
+                <img src="https://source.unsplash.com/200x200/?portrait,person10" alt="Team Member 10">
+                <h3>Laura Garcia</h3>
+                <p>Role: Volunteer Coordinator</p>
+            </div>
+        </div>
+        <div class="dots-container">
+            <span class="dot" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+            <span class="dot" data-slide="6"></span>
+            <span class="dot" data-slide="7"></span>
+            <span class="dot" data-slide="8"></span>
+            <span class="dot" data-slide="9"></span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        const teamWrapper = document.getElementById('teamWrapper');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Automatically update dots every 3 seconds
+        function autoUpdateDots() {
+            if (!teamWrapper.parentElement.matches(':hover')) {
+                currentSlide = (currentSlide + 1) % 10;
+                updateDots();
+            }
+        }
+
+        let dotInterval = setInterval(autoUpdateDots, 3000);
+
+        // Pause on hover
+        teamWrapper.parentElement.addEventListener('mouseenter', () => {
+            teamWrapper.style.animationPlayState = 'paused';
+        });
+
+        teamWrapper.parentElement.addEventListener('mouseleave', () => {
+            teamWrapper.style.animationPlayState = 'running';
+        });
+
+        // Clickable dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(dotInterval);
+                currentSlide = index;
+                teamWrapper.style.animation = 'none';
+                teamWrapper.style.transform = `translateX(-${index * 10}%)`;
+                updateDots();
+                setTimeout(() => {
+                    if (!teamWrapper.parentElement.matches(':hover')) {
+                        teamWrapper.style.animation = 'slide 30s infinite';
+                        dotInterval = setInterval(autoUpdateDots, 3000);
+                    }
+                }, 100);
+            });
+        });
+
+        updateDots(); // Initial dot state
+    </script>
+    
+</body>
+</html>

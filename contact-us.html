@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    
+    <title>Contact Us</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('https://th.bing.com/th/id/R.8190e85af9e03c0c3d98e8f69d20c176?rik=qOhTMD1Ola2b0A&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            position: relative;
+        }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px; /* Reduced height for better proportion */
+        background-color: blanchedalmond;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar a {
+        color: #4CAF50;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        color: yellowgreen;
+        background-color: rgba(76, 175, 80, 0.1);
+    }
+
+    .navbar img {
+        height: 100px; /* Adjusted for better fit */
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .dropbtn {
+        background-color:  #f8f8f8;
+        color: chartreuse;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: white;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .show {
+        display: block;
+    }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .content-form {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .content {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .content section {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .content section i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: dodgerblue;
+        }
+
+        .content section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content section p {
+            font-size: 15;
+            line-height: 1.5;
+        }
+
+        .form {
+            flex: 1;
+            max-width: 45%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form .contact-form {
+            margin-bottom: 1.5rem;
+        }
+
+        .form .contact-form input,
+        .form .contact-form textarea {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+        }
+
+        .form .contact-form input:focus,
+        .form .contact-form textarea:focus {
+            outline: none;
+            border-bottom: 2px solid dodgerblue;
+        }
+
+        .form .contact-form input[type="submit"] {
+            background-color: dodgerblue;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form .contact-form input[type="submit"]:hover {
+            background-color: transparent;
+            color: dodgerblue;
+            border: 2px solid dodgerblue;
+        }
+
+        .media {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            list-style: none;
+        }
+
+        .media li {
+            margin: 0 1rem;
+        }
+
+        .media li i {
+            font-size: 2rem;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .media li i:hover {
+            color: dodgerblue;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 900px) {
+            .content-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content, .form {
+                max-width: 100%;
+            }
+
+            header p {
+                width: 90%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="talent.png" alt="Logo" />
+        <ul class="nav-links">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="contest.html">Contest</a></li>
+            <li><a href="about-us.html">About-Us</a></li>  
+            <li><a href="contact-us.html">Contact-Us</a></li>
+        </ul>
+        <img src="ind.png" alt="logo">
+    </div>
+    <div class="container">
+        <header>
+            <h1>Contact Us</h1>
+            <p>
+                Feel free to reach out to us for any inquiries or assistance. We are here to help you with your waste management needs.
+            </p>
+        </header>
+
+        <div class="content-form">
+            <!-- Left Content -->
+            <div class="content">
+                <section>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h2>Address</h2>
+                    <p>
+                        123 Green Street<br>
+                        Eco City, Earth<br>
+                        456789
+                    </p>
+                </section>
+
+                <section>
+                    <i class="fas fa-phone-alt"></i>
+                    <h2>Phone</h2>
+                    <p>123-456-7890</p>
+                </section>
+
+                <section>
+                    <i class="fas fa-envelope"></i>
+                    <h2>Email</h2>
+                    <p>example@gmail.com</p>
+                </section>
+            </div>
+
+            <!-- Right Form -->
+            <div class="form">
+                <div class="contact-form">
+                    <input type="text" required placeholder="Full Name">
+                </div>
+            
+                <div class="contact-form">
+                    <input type="email" required placeholder="Email ID">
+                </div>
+            
+                <div class="contact-form">
+                    <textarea rows="5" required placeholder="Type your message..."></textarea>
+                </div>
+            
+                <div class="contact-form">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+            
+        </div>
+
+        <ul class="media">
+            <li>
+                <a href="https://www.youtube.com/channel/UCFzuNt8Tdwiv-ZuhsOpTtig" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </li>
+            <li>
+                <a href="http://instagram.com/uaeindiannritalent/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://chat.whatsapp.com/FiuQkavIORR7vQG8f5U6vk" class="whatsapp-float" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </li>
+        </ul>        
+        
+    </div>
+    <script>
+
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+  
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+</body>
+</html>

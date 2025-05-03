@@ -1,0 +1,405 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 180px;
+    background-color: blanchedalmond;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: #4CAF50;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: yellowgreen;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+}
+
+.navbar img {
+    height: 180px;
+    width: auto;
+    max-width: 15%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+}
+
+.objective {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ffffff, #f1f3f5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.objective h1 {
+    color: #1a3c5e;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.objective p {
+    font-size: 1.3em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.objective-content {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.objective-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.objective-content li {
+    margin: 20px 0;
+    font-size: 1.2em;
+    padding-left: 30px;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.objective-content li:hover {
+    transform: translateX(10px);
+    color: #e74c3c;
+}
+
+.objective-content li::before {
+    content: "★";
+    color: #e74c3c;
+    font-size: 1.3em;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.h1 {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ffffff, #f1f3f5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.h1 h1 {
+    color: #1a3c5e;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.h1 p {
+    font-size: 1.3em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.h1-content {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    line-height: 1.9;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.h2 {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ffffff, #e8f5e9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    border: 1px solid #4CAF50;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+.h2 h1 {
+    color: #1a3c5e;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.h2 h1::after {
+    content: '';
+    width: 100px;
+    height: 3px;
+    background: #4CAF50;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.message {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #4CAF50;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 1s forwards;
+    transition: transform 0.3s ease;
+}
+
+.message:hover {
+    transform: translateY(-5px);
+}
+
+.image {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    transition: transform 0.5s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.message-content {
+    flex: 2;
+    padding: 20px;
+    font-size: 1.2em;
+    line-height: 1.9;
+    color: #333;
+    position: relative;
+}
+
+.message-content::before {
+    content: '“';
+    font-size: 3em;
+    color: #4CAF50;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.3;
+}
+
+.message-content p {
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.message-content .signature {
+    font-weight: bold;
+    color: #1a3c5e;
+    margin-top: 20px;
+    font-size: 1.1em;
+    text-align: right;
+}
+
+.message-content .signature::before {
+    content: '— ';
+    color: #4CAF50;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        height: 150px;
+    }
+
+    .navbar img {
+        max-width: 20%;
+        height: 120px;
+    }
+
+    .navbar a {
+        font-size: 1.1rem;
+        margin: 0 10px;
+    }
+
+    .objective, .h1, .h2, .objective-content, .h1-content, .message {
+        max-width: 90%;
+        margin: 15px auto;
+        padding: 20px;
+    }
+
+    .objective h1, .h1 h1, .h2 h1 {
+        font-size: 2.4em;
+    }
+
+    .objective p, .h1 p {
+        font-size: 1.1em;
+    }
+
+    .message-content {
+        font-size: 1.1em;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .navbar a {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    .navbar img {
+        height: 100px;
+        max-width: 25%;
+    }
+
+    .message {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .image {
+        margin-bottom: 20px;
+        min-width: 100%;
+        max-width: 300px;
+    }
+
+    .message-content {
+        padding: 10px;
+    }
+
+    .objective, .h1, .h2, .objective-content, .h1-content {
+        padding: 15px;
+    }
+
+    .objective h1, .h1 h1, .h2 h1 {
+        font-size: 2.2em;
+    }
+
+    .objective-content li, .h1-content, .message-content {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar img {
+        height: 80px;
+        max-width: 30%;
+    }
+
+    .objective h1, .h1 h1, .h2 h1 {
+        font-size: 1.8em;
+    }
+
+    .objective p, .h1 p {
+        font-size: 1em;
+    }
+
+    .objective-content li, .h1-content, .message-content {
+        font-size: 1em;
+    }
+
+    .h2 {
+        margin: 10px auto;
+        padding: 20px 10px;
+    }
+
+    .message {
+        padding: 15px;
+    }
+
+    .image {
+        padding: 10px;
+    }
+
+    .image img {
+        max-height: 200px;
+    }
+}
