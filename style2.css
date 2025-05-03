@@ -87,7 +87,7 @@ body {
     gap: 10px;
 }
 
-.prize p::before {
+.prize h1::before {
     content: '🏆';
     font-size: 1.5em;
     margin-right: 10px;
@@ -95,7 +95,6 @@ body {
 }
 
 .use::before {
-    content: '📜';
     font-size: 2em;
     color: #4CAF50;
     position: absolute;
