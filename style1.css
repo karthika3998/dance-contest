@@ -1,58 +1,68 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Lora', serif;
+    background-color: #ffffff; /* Crisp white base */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M25 10v30m5-5h-10" stroke="%23D4A017" stroke-width="1.2" fill="none"/></svg>'); /* Delicate champagne gold musical note pattern */
+    background-size: 50px 50px;
+    color: #2b2b2b;
+    line-height: 1.6;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 180px;
-    background-color: blanchedalmond;
+    height: 70px; /* Slimmer for elegance */
+    background: linear-gradient(90deg, #1b263b, #2e4057); /* Navy blue gradient */
     position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 0 40px;
+    flex-wrap: nowrap; /* Prevent wrapping unless on smaller screens */
 }
 
-.navbar ul {
+.navbar ul.nav-links {
     list-style: none;
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
+    flex-grow: 1;
+    justify-content: center; /* Center links between logos */
 }
 
 .navbar a {
-    color: #4CAF50;
+    color: #ffffff; /* Clean white for readability */
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.3rem;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 20px; /* Reduced margin for better spacing */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
 }
 
 .navbar a:hover {
-    color: yellowgreen;
-    background-color: rgba(76, 175, 80, 0.1);
-    border-radius: 8px;
+    color: #d4a017; /* Champagne gold on hover */
+    background-color: rgba(212, 160, 23, 0.1);
 }
 
 .navbar img {
-    height: 180px;
+    height: 50px;
     width: auto;
-    max-width: 15%;
-    aspect-ratio: 3/2;
+    max-width: 100px;
     object-fit: contain;
     display: block;
-    margin: 0;
+    margin: 0 10px; /* Added margin for spacing between logos and links */
+    filter: drop-shadow(0 0 2px rgba(212, 160, 23, 0.3));
 }
 
 .objective {
     text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #ffffff, #f1f3f5);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 900px;
+    padding: 60px 40px;
+    background: linear-gradient(180deg, #f8f9fa, #ffffff); /* Subtle neutral gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 1000px;
     border-radius: 12px;
     opacity: 0;
     transform: translateY(50px);
@@ -60,28 +70,28 @@ body {
 }
 
 .objective h1 {
-    color: #1a3c5e;
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    color: #1b263b; /* Navy blue */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
 }
 
 .objective p {
-    font-size: 1.3em;
-    color: #6c757d;
-    font-style: italic;
+    font-size: 1.2em;
+    color: #2b2b2b;
+    font-style: normal;
+    line-height: 1.8;
 }
 
 .objective-content {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 40px;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1s ease-out 0.2s forwards;
@@ -93,22 +103,22 @@ body {
 }
 
 .objective-content li {
-    margin: 20px 0;
-    font-size: 1.2em;
-    padding-left: 30px;
+    margin: 25px 0;
+    font-size: 1.15em;
+    padding-left: 35px;
     position: relative;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .objective-content li:hover {
-    transform: translateX(10px);
-    color: #e74c3c;
+    transform: translateX(5px);
+    color: #c6538c; /* Rose pink */
 }
 
 .objective-content li::before {
-    content: "★";
-    color: #e74c3c;
-    font-size: 1.3em;
+    content: "🎵"; /* Musical note for singing theme */
+    color: #d4a017; /* Champagne gold */
+    font-size: 1.2em;
     position: absolute;
     left: 0;
     top: 2px;
@@ -116,11 +126,11 @@ body {
 
 .h1 {
     text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #ffffff, #f1f3f5);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 900px;
+    padding: 60px 40px;
+    background: linear-gradient(180deg, #f8f9fa, #ffffff); /* Subtle neutral gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    max-width: 1000px;
     border-radius: 12px;
     opacity: 0;
     transform: translateY(50px);
@@ -128,30 +138,30 @@ body {
 }
 
 .h1 h1 {
-    color: #1a3c5e;
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    color: #1b263b; /* Navy blue */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    letter-spacing: 1.2px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
 }
 
 .h1 p {
-    font-size: 1.3em;
-    color: #6c757d;
-    font-style: italic;
+    font-size: 1.2em;
+    color: #2b2b2b;
+    font-style: normal;
+    line-height: 1.8;
 }
 
 .h1-content {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 40px;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-size: 1.2em;
-    line-height: 1.9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.15em;
+    line-height: 1.8;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1s ease-out 0.6s forwards;
@@ -159,26 +169,25 @@ body {
 
 .h2 {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #ffffff, #e8f5e9);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    max-width: 900px;
+    padding: 70px 40px;
+    background: linear-gradient(180deg, #f8f9fa, #ffffff); /* Subtle neutral gradient */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1000px;
     border-radius: 12px;
-    border: 1px solid #4CAF50;
+    border: 1px solid #c6538c; /* Rose pink border */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
 
 .h2 h1 {
-    color: #1a3c5e;
-    font-size: 2.8em;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    color: #1b263b; /* Navy blue */
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    letter-spacing: 1.3px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
     position: relative;
 }
 
@@ -186,30 +195,30 @@ body {
     content: '';
     width: 100px;
     height: 3px;
-    background: #4CAF50;
+    background: #d4a017; /* Champagne gold */
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.message {
+.message, .Message {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 50px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    border-left: 5px solid #4CAF50;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #c6538c; /* Rose pink accent */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1s ease-out 1s forwards;
     transition: transform 0.3s ease;
 }
 
-.message:hover {
+.message:hover, .Message:hover {
     transform: translateY(-5px);
 }
 
@@ -217,11 +226,11 @@ body {
     flex: 1;
     min-width: 250px;
     padding: 15px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
 .image:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .image img {
@@ -230,23 +239,23 @@ body {
     max-height: 300px;
     border-radius: 10px;
     object-fit: cover;
-    border: 2px solid #4CAF50;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d4a017; /* Champagne gold border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .message-content {
     flex: 2;
     padding: 20px;
-    font-size: 1.2em;
-    line-height: 1.9;
-    color: #333;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #2b2b2b;
     position: relative;
 }
 
 .message-content::before {
     content: '“';
     font-size: 3em;
-    color: #4CAF50;
+    color: #c6538c; /* Rose pink */
     position: absolute;
     top: -10px;
     left: 10px;
@@ -259,8 +268,8 @@ body {
 }
 
 .message-content .signature {
-    font-weight: bold;
-    color: #1a3c5e;
+    font-weight: 600;
+    color: #1b263b; /* Navy blue */
     margin-top: 20px;
     font-size: 1.1em;
     text-align: right;
@@ -268,7 +277,7 @@ body {
 
 .message-content .signature::before {
     content: '— ';
-    color: #4CAF50;
+    color: #d4a017; /* Champagne gold */
 }
 
 @keyframes fadeInUp {
@@ -284,27 +293,28 @@ body {
 
 @media (max-width: 1024px) {
     .navbar {
-        height: 150px;
+        height: 60px;
+        padding: 0 20px;
     }
 
     .navbar img {
-        max-width: 20%;
-        height: 120px;
+        max-width: 80px;
+        height: 40px;
     }
 
     .navbar a {
-        font-size: 1.1rem;
-        margin: 0 10px;
+        font-size: 0.95rem;
+        margin: 0 10px; /* Reduced margin for smaller screens */
     }
 
-    .objective, .h1, .h2, .objective-content, .h1-content, .message {
+    .objective, .h1, .h2, .objective-content, .h1-content, .message, .Message {
         max-width: 90%;
-        margin: 15px auto;
-        padding: 20px;
+        margin: 20px auto;
+        padding: 25px;
     }
 
     .objective h1, .h1 h1, .h2 h1 {
-        font-size: 2.4em;
+        font-size: 2.2em;
     }
 
     .objective p, .h1 p {
@@ -321,25 +331,26 @@ body {
     .navbar {
         flex-direction: column;
         height: auto;
-        padding: 10px;
+        padding: 15px;
     }
 
-    .navbar ul {
+    .navbar ul.nav-links {
         flex-direction: column;
         margin: 10px 0;
     }
 
     .navbar a {
-        margin: 5px 0;
-        font-size: 1rem;
+        margin: 8px 0;
+        font-size: 0.9rem;
     }
 
     .navbar img {
-        height: 100px;
-        max-width: 25%;
+        height: 40px;
+        max-width: 80px;
+        margin: 5px 0; /* Adjusted margin for vertical stacking */
     }
 
-    .message {
+    .message, .Message {
         flex-direction: column;
         align-items: center;
         padding: 20px;
@@ -356,22 +367,22 @@ body {
     }
 
     .objective, .h1, .h2, .objective-content, .h1-content {
-        padding: 15px;
+        padding: 20px;
     }
 
     .objective h1, .h1 h1, .h2 h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .objective-content li, .h1-content, .message-content {
-        font-size: 1.1em;
+        font-size: 1.05em;
     }
 }
 
 @media (max-width: 480px) {
     .navbar img {
-        height: 80px;
-        max-width: 30%;
+        height: 35px;
+        max-width: 70px;
     }
 
     .objective h1, .h1 h1, .h2 h1 {
@@ -387,11 +398,11 @@ body {
     }
 
     .h2 {
-        margin: 10px auto;
-        padding: 20px 10px;
+        margin: 15px auto;
+        padding: 15px;
     }
 
-    .message {
+    .message, .Message {
         padding: 15px;
     }
 
