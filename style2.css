@@ -1,102 +1,142 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f8f0;
+    font-family: 'Lora', serif;
+    background-color: #ffffff;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M25 10v30m5-5h-10" stroke="%23D4A017" stroke-width="1.2" fill="none"/></svg>');
+    background-size: 50px 50px;
+    color: #2b2b2b;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px; /* Reduced height for better proportion */
-    background-color: blanchedalmond;
-    padding: 0 20px;
-    position: relative;
+    height: 70px;
+    background: linear-gradient(90deg, #1b263b, #2e4057);
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
 }
 
-.navbar ul {
+.navbar ul.nav-links {
     list-style: none;
     display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar a {
-    color: #4CAF50;
+    color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    padding: 10px 15px;
+    margin: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
     transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
 }
 
 .navbar a:hover {
-    color: yellowgreen;
-    background-color: rgba(76, 175, 80, 0.1);
+    color: #d4a017;
+    background-color: rgba(212, 160, 23, 0.1);
 }
 
 .navbar img {
-    height: 100px; /* Adjusted for better fit */
+    height: 50px;
     width: auto;
-    max-width: 150px;
+    max-width: 100px;
     object-fit: contain;
+    margin: 0 0.5rem;
+    filter: drop-shadow(0 0 2px rgba(212, 160, 23, 0.3));
 }
-.par, .prize, .use, .rules, .miscellaneous, .agreement {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 30px;
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #d4a017;
+}
+
+.par, .prize, .use, .rules, .miscellaneous, .agreement, .song {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #4CAF50;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #c6538c;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
-    color: #1a3c5e;
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+.par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1, .song1 h1 {
+    color: #1b263b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
     position: relative;
 }
 
-.par h1::after, .prize h1::after, .use h1::after, .rules h1::after, .miscellaneous h1::after, .agreement h1::after {
+.song2 h2 {
+    color: #1b263b;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    position: relative;
+}
+
+.par h1::after, .prize h1::after, .use h1::after, .rules h1::after, .miscellaneous h1::after, .agreement h1::after, .song1 h1::after, .song2 h2::after {
     content: '';
     width: 80px;
     height: 3px;
-    background: #4CAF50;
+    background: #d4a017;
     position: absolute;
     bottom: -8px;
     left: 0;
 }
 
-.par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p {
+.par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p, .song1 p {
     font-size: 1.1em;
-    color: #333;
+    color: #2b2b2b;
     line-height: 1.8;
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
 .prize p {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .prize h1::before {
-    content: '🏆';
+    content: '🎵';
     font-size: 1.5em;
     margin-right: 10px;
     vertical-align: middle;
+    color: #c6538c;
 }
 
 .use::before {
+    content: '🎤';
     font-size: 2em;
-    color: #4CAF50;
+    color: #d4a017;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -104,43 +144,220 @@ body {
 }
 
 .rules p, .miscellaneous p {
-    padding-left: 20px;
+    padding-left: 25px;
     position: relative;
 }
 
 .rules p::before, .miscellaneous p::before {
     content: '•';
-    color: #4CAF50;
+    color: #c6538c;
     font-size: 1.5em;
     position: absolute;
     left: 0;
 }
 
 .btn {
-    display: block;
-    margin: 40px auto;
-    padding: 15px 30px;
-    background: #4CAF50;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    padding: 14px 40px;
+    background: linear-gradient(45deg, #c6538c, #ff99cc);
+    color: #ffffff;
     border: none;
     border-radius: 8px;
-    font-size: 1.2em;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: 'Lora', serif;
+    font-weight: 500;
     text-align: center;
     text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(198, 83, 140, 0.4);
+    cursor: pointer;
+}
+
+.btn i {
+    margin-right: 8px;
+    font-size: 1rem;
 }
 
 .btn:hover {
-    background: #45a049;
-    transform: translateY(-3px);
+    background: linear-gradient(45deg, #d4a017, #ffcc66);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(212, 160, 23, 0.5);
+}
+
+.btn:focus {
+    outline: 2px solid #c6538c;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(198, 83, 140, 0.3);
+}
+
+.btn.loading {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.btn.loading::after {
+    content: 'Uploading...';
+    margin-left: 8px;
+}
+
+.btn.loading i {
+    display: none;
 }
 
 .btn a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 38, 59, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid #c6538c;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.6em;
+    margin: 0;
+    color: #1b263b;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #2b2b2b;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #c6538c;
+}
+
+.modal-body {
+    padding: 25px;
+    overflow-y: auto;
+    flex: 1;
+    font-size: 1.1em;
+    color: #2b2b2b;
+    line-height: 1.8;
+    scrollbar-width: thin;
+    scrollbar-color: #d4a017 #f8f9fa;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #d4a017;
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #e8c04b;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e9ecef;
+    text-align: right;
+}
+
+.modal-footer a {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(45deg, #c6538c, #ff99cc);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.modal-footer a:hover {
+    background: linear-gradient(45deg, #d4a017, #ffcc66);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.song1, .song2 {
+    padding: 20px 0;
+}
+
+.song2 label {
+    font-size: 1.1em;
+    color: #2b2b2b;
+    display: block;
+    margin: 12px 0 8px;
+}
+
+.song2 textarea,
+.song2 input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.song2 textarea {
+    resize: vertical;
+    min-height: 50px;
+    max-width: 500px;
 }
 
 @keyframes fadeInUp {
@@ -156,80 +373,178 @@ body {
 
 @media (max-width: 1024px) {
     .navbar {
-        height: 80px;
+        height: 60px;
+        padding: 0 3%;
     }
 
     .navbar a {
-        font-size: 1.1rem;
-        margin: 0 15px;
+        font-size: 0.95rem;
+        margin: 0 1rem;
     }
 
-    .par, .prize, .use, .rules, .miscellaneous, .agreement {
+    .navbar img {
+        height: 40px;
+        max-width: 80px;
+    }
+
+    .par, .prize, .use, .rules, .miscellaneous, .agreement, .song {
         max-width: 90%;
-        margin: 20px auto;
-        padding: 20px;
+        margin: 30px auto;
+        padding: 25px;
     }
 
-    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
-        font-size: 2em;
+    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1, .song1 h1 {
+        font-size: 1.8em;
     }
 
-    .par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p {
+    .song2 h2 {
+        font-size: 1.4em;
+    }
+
+    .par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p, .song1 p, .song2 label, .song2 textarea, .song2 input {
         font-size: 1em;
     }
 
+    .song2 textarea {
+        max-width: 100%;
+    }
+
     .btn {
-        padding: 12px 25px;
-        font-size: 1.1em;
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        max-width: 80%;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-body {
+        font-size: 1em;
     }
 }
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-wrap: wrap;
         height: auto;
-        padding: 15px;
+        padding: 1rem;
     }
 
-    .navbar ul {
+    .navbar ul.nav-links {
+        display: none;
         flex-direction: column;
-        margin: 10px 0;
+        width: 100%;
+        background: #1b263b;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .navbar ul.nav-links.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .navbar a {
-        margin: 5px 0;
+        margin: 0.5rem 0;
         font-size: 1rem;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        text-align: center;
     }
 
-    .par, .prize, .use, .rules, .miscellaneous, .agreement {
-        padding: 15px;
+    .hamburger {
+        display: block;
     }
 
-    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
-        font-size: 1.8em;
+    .navbar img {
+        height: 40px;
+        max-width: 80px;
+        margin: 0.5rem;
+    }
+
+    .par, .prize, .use, .rules, .miscellaneous, .agreement, .song {
+        padding: 20px;
+    }
+
+    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1, .song1 h1 {
+        font-size: 1.6em;
+    }
+
+    .song2 h2 {
+        font-size: 1.3em;
     }
 
     .btn {
-        padding: 10px 20px;
-        font-size: 1em;
+        padding: 10px 30px;
+        font-size: 0.9em;
+    }
+
+    .modal-content {
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .navbar img {
+        height: 35px;
+        max-width: 70px;
+    }
+
+    .navbar ul.nav-links {
+        top: 60px;
+    }
+
     .navbar a {
         font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
     }
 
-    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1 {
-        font-size: 1.6em;
+    .hamburger {
+        font-size: 1.5rem;
     }
 
-    .par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p {
+    .par h1, .prize h1, .use h1, .rules h1, .miscellaneous h1, .agreement h1, .song1 h1 {
+        font-size: 1.4em;
+    }
+
+    .song2 h2 {
+        font-size: 1.2em;
+    }
+
+    .par p, .prize p, .use p, .rules p, .miscellaneous p, .agreement p, .song1 p, .song2 label, .song2 textarea, .song2 input {
         font-size: 0.95em;
     }
 
     .btn {
-        padding: 8px 15px;
+        padding: 8px 25px;
+        font-size: 0.85em;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3em;
+    }
+
+    .modal-body {
         font-size: 0.95em;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none !important;
     }
 }
